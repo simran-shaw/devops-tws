@@ -1,0 +1,30 @@
+#### WORKFLOW #####
+# Name of the Workflow
+name: CICD
+
+# when does the workflow run
+on: push
+
+#### JOBS #####
+jobs:
+  code:
+    runs-on: ubuntu-latest # runner OS
+    steps: # step
+      - name: Code checkout
+        uses: actions/checkout@v7 # actions
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Build with docker
+        run: echo "Docker todo"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Code test
+          run: echo "Code test done"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Deploy
+        run: echo "Code deploy done"
+  
